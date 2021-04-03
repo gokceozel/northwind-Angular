@@ -10,7 +10,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryComponent implements OnInit {
 
   categories: Category[]=[];
- 
+  currentCategory:Category;
 
   constructor(private categoryService:CategoryService) { }
 
@@ -23,5 +23,9 @@ export class CategoryComponent implements OnInit {
       this.categories=response.data;
       
     })
+  }
+
+  setCurrentCategory(category:Category){
+    console.log(category.categoryName)
   }
 }
