@@ -1,7 +1,16 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<table  *ngIf="dataLoaded==true" class="table table-hover table-borderless">
+<div><br></div>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="enter product name">
+</div>
+<div>
+   <div *ngIf="filterText" class="alert alert-primary">
+     {{filterText}} aradınız.
+   </div>
+</div>
+<table  *ngIf="dataLoaded==true" class="table table-hover table-border">
     <thead>
        <tr>
          <th>Id </th>
@@ -16,8 +25,8 @@
       <td>{{product.productId}}</td>
       <td>{{product.productName | uppercase}}</td>
       <td>{{product.categoryId}}</td>
-      <td>{{product.unitPrice | currency}}</td>
-      <td>{{product.unitPrice | vatAdded:10 | currency}}</td>
+      <td>{{product.unitPrice | currency:"₺"}}</td>
+      <td>{{product.unitPrice | vatAdded:10 | currency:"₺"}}</td>
       <td>{{product.unitsInStock}}</td>
     </tr>
 
