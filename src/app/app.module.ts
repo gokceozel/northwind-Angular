@@ -10,6 +10,7 @@ import { CategoryComponent } from './compomemts/category/category.component';
 import { NaviComponent } from './compomemts/navi/navi.component';
 import { from } from 'rxjs';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VatAddedPipe } from './pipes/vat-added.pipe';
     ProductComponent,
     CategoryComponent,
     NaviComponent,
-    VatAddedPipe
+    VatAddedPipe,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,
