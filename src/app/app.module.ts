@@ -11,6 +11,7 @@ import { NaviComponent } from './compomemts/navi/navi.component';
 import { from } from 'rxjs';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule ,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
