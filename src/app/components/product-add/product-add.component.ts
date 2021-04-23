@@ -10,7 +10,9 @@ export class ProductAddComponent implements OnInit {
 
  productAddForm:FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder) { 
+    this.createProductAddForm();
+  }
 
   ngOnInit(): void {
   }
