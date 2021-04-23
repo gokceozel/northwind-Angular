@@ -38,7 +38,7 @@ export class ProductAddComponent implements OnInit {
       let productNodel=Object.assign({},this.productAddForm.value);
       this.productService.add(productNodel).subscribe(data=>{
         console.log(data);
-        this.toastrService.success("Başarılı","Ürün Eklendi");
+        this.toastrService.success(data.message.toString(),"Ürün Eklendi");
       });
    }
    else{
