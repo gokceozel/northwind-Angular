@@ -25,4 +25,12 @@ export class ProductAddComponent implements OnInit {
         categoryId:["",Validators.required]
       });
   }
+
+  add(){
+    let productNodel=Object.assign(
+      {},this.productAddForm.value
+    );
+
+    console.log(productNodel);
+  }
 }
