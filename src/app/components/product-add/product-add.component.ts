@@ -39,6 +39,9 @@ export class ProductAddComponent implements OnInit {
       this.productService.add(productNodel).subscribe(data=>{
         console.log(data);
         this.toastrService.success(data.message.toString(),"Ürün Eklendi");
+      },errorMessage=>{
+         console.log(errorMessage.error);
+         this.toastrService.error("Hata",errorMessage.error.message);
       });
    }
    else{
