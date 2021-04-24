@@ -40,8 +40,17 @@ export class ProductAddComponent implements OnInit {
         console.log(data);
         this.toastrService.success(data.message.toString(),"Ürün Eklendi");
       },errorMessage=>{
-         console.log(errorMessage.error);
-         this.toastrService.error("Hata",errorMessage.error.message);
+        //  console.log(errorMessage.error);
+        if(errorMessage.error.Errors.length>0)
+         {
+           console.log(errorMessage.error.Errors);
+           for (let i = 0; i < errorMessage.error.Errors.length; i++) 
+           {
+            this.toastrService.error("",errorMessage.error.Errors[i].ErrorMessage);
+             
+           }
+        
+         }
       });
    }
    else{
